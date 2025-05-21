@@ -1,0 +1,45 @@
+plugins {
+    id 'org.openjfx.javafxplugin'
+    id 'application'
+}
+
+group 'com.mattjoneslondon'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "21.0.1"
+    modules = [ 'javafx.controls' ]
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.testfx:testfx-core:4.0.16-alpha'
+    testImplementation 'org.testfx:testfx-junit5:4.0.16-alpha'
+    testImplementation 'org.mockito:mockito-core:5.3.1'
+    implementation("io.github.sebivenlo:openjfx-monocle:jdk-21.0.1")
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    
+    systemProperty 'testfx.robot', 'glass'
+    systemProperty 'testfx.headless', 'true'
+    systemProperty 'prism.order', 'sw'
+    systemProperty 'prism.text', 't2k'
+    systemProperty 'java.awt.headless', 'true'
+    systemProperty 'glass.platform', 'Monocle'
+    systemProperty 'monocle.platform', 'Headless'
+    systemProperty 'monocle.headless.width', '800'
+    systemProperty 'monocle.headless.height', '600'
+}
+
+mainClassName = 'StationWanderersApp'
