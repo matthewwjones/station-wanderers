@@ -19,7 +19,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.13.3'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.13.3'
     testImplementation 'org.hamcrest:hamcrest:3.0'
-    testImplementation 'org.testfx:testfx-core:4.0.16-alpha'
+    testImplementation 'org.testfx:testfx-core:4.0.18'
     testImplementation 'org.testfx:testfx-junit5:4.0.16-alpha'
     testImplementation 'org.mockito:mockito-core:5.3.1'
     implementation("io.github.sebivenlo:openjfx-monocle:jdk-21.0.1")
